@@ -1,0 +1,10 @@
+
+
+.text-field{
+  @apply px-2 border rounded-md w-full bg-white focus:outline-none h-11;
+}
+/*********/
+.btn{
+  @apply inline-block px-2 rounded-md border w-28 min-w-max h-11;
+}
+.btn-info{@apply bg-cyan-500 text-white}

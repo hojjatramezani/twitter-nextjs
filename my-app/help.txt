@@ -40,3 +40,9 @@ go to setting.json
 add: "css.lint.unknownAtRules": "ignore", or "scss.lint.unknownAtRules": "ignore",
 
 ---------------------------------------------------------
+
+fix error: Cannot find module 'react'
+https://bobbyhadz.com/blog/typescript-cannot-find-module-react
+
+npm install react
+npm i --save-dev @types/react.
