@@ -7,7 +7,6 @@ const authorization = () =>
 {
     const [ tab, setTab ] = useState<'login' | 'signup'>( 'login' );
 
-
     return (
         <div className={style.root}>
 
