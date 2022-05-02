@@ -1,14 +1,16 @@
+import React from 'react';
 
+const Login = () =>
+{
+  return (
+    <div className='py-4 px-3'>
 
-const Login = () => {
-    return (
-      <div className='py-4 px-3'>
-         <div className='py-2'>
-             <input type="text" className='px-1 border rounded-md w-100 bg-white' placeholder='Full Name' />
-         </div>
-      </div>
-    )
-  }
-  
-  export default Login
-  
+      <input type="text" className='text-field mb-3' placeholder='User Name' />
+      <input type="password" className='text-field mb-10' placeholder='Password' />
+
+      <button className='btn btn-info w-full'>ورود به سایت</button>
+    </div>
+  );
+};
+
+export default Login;

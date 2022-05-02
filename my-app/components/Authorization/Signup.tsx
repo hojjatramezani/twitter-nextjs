@@ -10,7 +10,7 @@ const Signup = () =>
       <input type="password" className='text-field mb-3' placeholder='Password' />
       <input type="password" className='text-field mb-10' placeholder='Re-password' />
 
-      <button className='btn btn-info w-full'> ثبت نام</button>
+      <button className='btn btn-info w-full '> ثبت نام</button>
     </div>
   );
 };

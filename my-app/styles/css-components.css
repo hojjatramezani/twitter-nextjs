@@ -1,9 +1,10 @@
 
+.transition3ms{@apply transition duration-300 ease-in-out}
 
 .text-field{
   @apply px-2 border rounded-md w-full bg-white focus:outline-none h-11;
 }
 /*********/
-.btn{@apply inline-block px-2 rounded-md border w-28 min-w-max h-11;}
-.btn-info{@apply bg-cyan-500 text-white}
-.btn-warning{@apply bg-orange-500 text-white}
+.btn{@apply inline-block px-2 rounded-md border w-28 min-w-max h-11 transition3ms ;}
+.btn-info{@apply bg-cyan-500 text-white hover:bg-cyan-600}
+.btn-warning{@apply bg-orange-500 text-white hover:bg-orange-600}
