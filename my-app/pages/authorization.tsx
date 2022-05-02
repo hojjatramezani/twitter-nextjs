@@ -9,7 +9,7 @@ const authorization = () =>
 
 
     return (
-        <div className='pt-28 px-6 pb-6 bg-gradient-to-r from-cyan-500 to-blue-500 min-h-screen'>
+        <div className={style.root}>
 
             <img width={100} className="block mx-auto" src="images/logo.png" alt="" />
             <p className="text-center text-2xl mb-12 font-bold text-white">به توییتر خوش آمدید</p>
@@ -31,3 +31,9 @@ const authorization = () =>
 };
 
 export default authorization;
+
+
+
+const style = {
+    root: 'pt-28 px-6 pb-6 bg-gradient-to-r from-cyan-500 to-blue-500 min-h-screen',
+}
