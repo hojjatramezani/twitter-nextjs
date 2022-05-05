@@ -1,14 +1,27 @@
 import React from 'react';
+import IconHashtag from '../../Ui/Icon/IconHashtag';
 
 const HashtagsSidebar = () =>
 {
   return (
     <div className='py-4 px-3'>
+      <img src="/images/logo-fa.png" width={210} className='block mx-auto mb-4' alt="" />
+      <p className='font-bold text-center mb-5'>داغ ترین هشتگ ها</p>
 
-      <input type="text" className='text-field mb-3' placeholder='User Name' />
-      <input type="password" className='text-field mb-10 ' placeholder='Password' />
-
-      <button className='btn btn-info w-full'>ورود به سایت</button>
+      <ul>
+        <li className='flex justify-start py-1 px-2'>
+          <IconHashtag width={24} />
+          <span className='pr-3'>استقلال</span>
+        </li>
+        <li className='flex justify-start py-1 px-2'>
+          <IconHashtag width={24} />
+          <span className='pr-3'>استقلال</span>
+        </li>
+        <li className='flex justify-start py-1 px-2'>
+          <IconHashtag width={24} />
+          <span className='pr-3'>استقلال</span>
+        </li>
+      </ul>
     </div>
   );
 };
