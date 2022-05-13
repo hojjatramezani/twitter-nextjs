@@ -2,16 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply text-gray-700;
+  }
+}
+
 @import "./css-components.css";
 
-/* html,
+@font-face {
+	font-family: iranyekan;
+	font-style: normal;
+	font-weight: normal;
+	src: url('./fonts/eot/iranyekanwebregular.eot');
+	src: url('./fonts/eot/iranyekanwebregular.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('./fonts/woff2/iranyekanwebregular.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./fonts/woff/iranyekanwebregular.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('./fonts/ttf/iranyekanwebregular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: roboto;
+	font-style: normal;
+	font-weight: normal;
+	src: url('./fonts/eot/robotoregular.eot');
+	src: url('./fonts/eot/robotoregular.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('./fonts/woff2/robotoregular.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./fonts/woff/robotoregular.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('./fonts/ttf/robotoregular.ttf') format('truetype');
+}
+
+html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: iranyekan , roboto , -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+/*
 a {
   color: inherit;
   text-decoration: none;
