@@ -1,0 +1,61 @@
+{
+  "tweets": [
+    {
+      "sender":{
+        "id": "@hojjat",
+        "name": "حجت رمضانی",
+        "image": "/images/users/a.png"
+      },
+      "text": "این یک توییت است.",
+      "like": 234
+    },
+    {
+      "sender":{
+        "id": "@hojjat",
+        "name": "حجت رمضانی",
+        "image": "/images/users/a.png"
+      },
+      "text": "این یک توییت است.",
+      "like": 234
+    },
+    {
+      "sender":{
+        "id": "@hojjat",
+        "name": "حجت رمضانی",
+        "image": "/images/users/a.png"
+      },
+      "text": "این یک توییت است.",
+      "like": 234
+    }
+  ],
+  "hashtags": [
+    "استقلال",
+    "سیگار",
+    "احساس_خوب",
+    "خودرو_ملی",
+    "فرهاد_مجیدی"
+
+  ],
+  "users": [
+    {
+      "id": "@hojjat",
+      "name": "حجت رمضانی",
+      "image": "/images/users/a.png"
+    },
+    {
+      "id": "@ali",
+      "name": "علی غلامی",
+      "image": "/images/users/a.png"
+    },
+    {
+      "id": "@hasan",
+      "name": "حسن رضایی",
+      "image": "/images/users/a.png"
+    },
+    {
+      "id": "@maryam",
+      "name": "مریم فاطمی",
+      "image": "/images/users/a.png"
+    }
+  ]
+}
