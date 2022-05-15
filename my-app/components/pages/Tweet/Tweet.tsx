@@ -24,7 +24,8 @@ const Tweet = () =>
       <p className='py-3 pr-10 pl-2 mb-3 text-xs'>این یک توییت است</p>
 
       <div className='flex justify-end py-1'>
-        <IconLike width={24} className={"cursor-pointer"}  />
+        <div>236</div>
+        <IconLike width={24} className={"mr-2 cursor-pointer"}  />
         <IconReply width={24} className={"mr-2 cursor-pointer"}  />
       </div>
       
