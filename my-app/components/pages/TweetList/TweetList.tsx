@@ -1,22 +1,29 @@
 import React from 'react';
-import IconAddPhoto from '../../Ui/Icon/IconAddPhoto';
-import IconExit from '../../Ui/Icon/IconExit';
-import IconHashtag from '../../Ui/Icon/IconHashtag';
-import IconAvatar from '../../Ui/Icon/IconAvatar';
-import IconPic from '../../Ui/Icon/IconPic';
-import Tweet from './../Tweet/Tweet';
+import Tweet, { ITweetProps } from './../Tweet/Tweet';
 
-const TweetList = () =>
+// export type list = [
+//   {
+//     id: string;
+//     name: string;
+//     image: string;
+//     text: string;
+//     like: string;
+//   }
+// ];
+interface ITweetListProps
+{
+  tweets: ITweetProps[];
+}
+
+const TweetList = ( props: ITweetListProps ) =>
 {
   return (
     <div>
 
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      
+      {
+        props.tweets.map( item => <Tweet {...item}/> )
+      }
+
     </div>
   );
 };

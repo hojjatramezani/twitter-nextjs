@@ -7,8 +7,18 @@ import IconPic from '../../Ui/Icon/IconPic';
 import IconReply from './../../Ui/Icon/IconReply';
 import IconLike from './../../Ui/Icon/IconLike';
 
-const Tweet = () =>
+export interface ITweetProps{
+  id: string
+  name: string
+  image: string
+  text: string
+  like: string
+}
+
+const Tweet = (props: ITweetProps) =>
 {
+  console.log(props);
+  
   return (
     <div className='py-2 px-3 my-1 border-b'>
 
@@ -17,7 +27,7 @@ const Tweet = () =>
           <IconAvatar width={32} />
         </div>
         <div className="grow px-3 py-2">
-          <p className='font-iranyekan'>حجت رمضانی</p>
+          <p className='font-iranyekan'>{props.name}</p>
         </div>
       </div>
 

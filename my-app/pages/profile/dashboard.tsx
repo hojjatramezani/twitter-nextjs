@@ -1,12 +1,29 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import SendTweet from "../../components/pages/SendTweet/SendTweet";
-import Tweet from "../../components/pages/Tweet/Tweet";
+import { ITweetProps } from "../../components/pages/Tweet/Tweet";
 import TweetList from "../../components/pages/TweetList/TweetList";
 import IconHome from "../../components/Ui/Icon/IconHome";
 import LayoutDashboard from "../../layouts/LayoutDashboard/LayoutDashboard";
 
 const dashboard = () =>
 {
+
+    const [tweets , setTweets] = useState<ITweetProps[]>([]);
+
+    useEffect(()=> {
+        axios.get("http://localhost:3000/tweets")
+        .then(res => {
+
+            setTweets(res.data)
+            console.log(res.data);
+            
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    },[])
+
     return (
         <LayoutDashboard>
 
@@ -17,7 +34,7 @@ const dashboard = () =>
 
             <SendTweet />
 
-            <TweetList />
+            <TweetList tweets={tweets} />
 
         </LayoutDashboard>
     );
