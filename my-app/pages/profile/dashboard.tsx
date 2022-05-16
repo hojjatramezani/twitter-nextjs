@@ -15,8 +15,14 @@ const dashboard = () =>
         axios.get("http://localhost:3000/tweets")
         .then(res => {
 
-            setTweets(res.data)
-            console.log(res.data);
+            let products = res.data;
+            products = products.map((item:any) => {
+                const text = item.text;
+                const like = item.like;
+                const {id , name , image} = item.sender;
+                return {id , name , image , text , like}
+            });
+            setTweets(products)
             
         })
         .catch(err => {

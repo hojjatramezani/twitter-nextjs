@@ -1,15 +1,6 @@
 import React from 'react';
 import Tweet, { ITweetProps } from './../Tweet/Tweet';
 
-// export type list = [
-//   {
-//     id: string;
-//     name: string;
-//     image: string;
-//     text: string;
-//     like: string;
-//   }
-// ];
 interface ITweetListProps
 {
   tweets: ITweetProps[];

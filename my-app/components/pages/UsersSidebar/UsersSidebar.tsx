@@ -1,11 +1,35 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import IconAddPhoto from '../../Ui/Icon/IconAddPhoto';
 import IconExit from '../../Ui/Icon/IconExit';
 import IconHashtag from '../../Ui/Icon/IconHashtag';
 import IconAvatar from './../../Ui/Icon/IconAvatar';
 
+
+type User = {
+  id: string
+  name: string
+  image: string
+}
+
 const UsersSidebar = () =>
 {
+
+  const [ users, setUsers ] = useState<User[]>( [] );
+
+  useEffect( () =>
+  {
+    axios.get( "http://localhost:3000/users" )
+      .then( res =>
+      {
+        setUsers( res.data );
+      } )
+      .catch( err =>
+      {
+        console.log( err );
+      } );
+  } );
+
   return (
     <div className='py-4 px-3'>
       <div className='flex justify-end'>
@@ -25,70 +49,21 @@ const UsersSidebar = () =>
       <div className='bg-gray-200 rounded-t-2xl overflow-hidden'>
         <p className='text-lg py-3 border-b border-gray-300 px-3'>بهترین خبرنگاران</p>
         <ul>
-
-          <li className='py-2 px-2 flex justify-start border-b border-gray-300'>
-            <IconAvatar width={40}/>
-            <div className='px-2 text-sm'>
-              <p>رضا غلامی</p>
-              <p>@reza_gholami</p>
-            </div>
-          </li>
-
-          <li className='py-2 px-2 flex justify-start border-b border-gray-300'>
-            <IconAvatar width={40}/>
-            <div className='px-2 text-sm'>
-              <p>رضا غلامی</p>
-              <p>@reza_gholami</p>
-            </div>
-          </li>
-
-          <li className='py-2 px-2 flex justify-start border-b border-gray-300'>
-            <IconAvatar width={40}/>
-            <div className='px-2 text-sm'>
-              <p>رضا غلامی</p>
-              <p>@reza_gholami</p>
-            </div>
-          </li>
-
-          <li className='py-2 px-2 flex justify-start border-b border-gray-300'>
-            <IconAvatar width={40}/>
-            <div className='px-2 text-sm'>
-              <p>رضا غلامی</p>
-              <p>@reza_gholami</p>
-            </div>
-          </li>
-
-          <li className='py-2 px-2 flex justify-start border-b border-gray-300'>
-            <IconAvatar width={40}/>
-            <div className='px-2 text-sm'>
-              <p>رضا غلامی</p>
-              <p>@reza_gholami</p>
-            </div>
-          </li>
-
-          <li className='py-2 px-2 flex justify-start border-b border-gray-300'>
-            <IconAvatar width={40}/>
-            <div className='px-2 text-sm'>
-              <p>رضا غلامی</p>
-              <p>@reza_gholami</p>
-            </div>
-          </li>
-
-          <li className='py-2 px-2 flex justify-start border-b border-gray-300'>
-            <IconAvatar width={40}/>
-            <div className='px-2 text-sm'>
-              <p>رضا غلامی</p>
-              <p>@reza_gholami</p>
-            </div>
-          </li>
-
-          <li className='py-2 px-2 flex justify-start border-b border-gray-300'>
-            <IconAvatar width={40}/>
-            <div className='px-2 text-sm'>
-              <p>رضا غلامی</p>
-              <p>@reza_gholami</p>
-            </div>
-          </li>
+          {
+            users.map( item =>
+            {
+              return (
+                <li className='py-2 px-2 flex justify-start border-b border-gray-300'>
+                  {item.image ? <img src={item.image} className="rounded-full" width={40} /> : <IconAvatar width={40} />}
+                  
+                  <div className='px-2 text-sm'>
+                    <p>{item.name}</p>
+                    <p>{item.id}</p>
+                  </div>
+                </li>
+              );
+            } )
+          }
 
         </ul>
       </div>

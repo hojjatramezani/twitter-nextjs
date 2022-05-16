@@ -2,30 +2,30 @@
   "tweets": [
     {
       "sender":{
-        "id": "@hojjat",
-        "name": "حجت رمضانی",
-        "image": "/images/users/a.png"
+        "id": "@ali",
+        "name": "علی غلامی",
+        "image": "/images/users/profile_photo1.jpeg"
       },
-      "text": "این یک توییت است. 1111111111111",
-      "like": 234
+      "text": "ایران در تولوز میهمان فرانسه بوده و با حداقل اختلاف بازی را به حریف خود واگذار کرده است، آن‌هم تیمی که ستارگانی مثل باکسیم بوسیس، دومینیک روشتو، برنارد لاکومب و ... در اختیار داشته است.",
+      "like": 78
     },
     {
       "sender":{
         "id": "@hojjat",
-        "name": "حجت رمضانی",
-        "image": "/images/users/a.png"
+        "name": "بهمن ثانی",
+        "image": "/images/users/profile_photo2.jpeg"
       },
-      "text": "این یک توییت است. 2222222222222",
+      "text": "لائوتارو مارتینز، مهاجم آرژانتینی اینتر به صف ستاره های بزرگ تاریخ این باشگاه ملحق شد.",
       "like": 234
     },
     {
       "sender":{
-        "id": "@hojjat",
-        "name": "حجت رمضانی",
-        "image": "/images/users/a.png"
+        "id": "@vahid",
+        "name": "وحید احمدی",
+        "image": "/images/users/profile_photo3.jpeg"
       },
-      "text": "این یک توییت است. 3333333333333",
-      "like": 234
+      "text": "به گزارش ورزش سه، امید نورافکن در حال سپری کردن یکی از فشرده‌ترین فصول حرفه‌ای خود است. او نه‌تنها در اردوی خردادماه سال گذشته تیم ملی در کیش و بحرین و همین‌طور تمامی اردوهای بعدی حضور داشته، که طی این  مدت همواره بازیکنی ثابت",
+      "like": 4
     }
   ],
   "hashtags": [
@@ -40,22 +40,22 @@
     {
       "id": "@hojjat",
       "name": "حجت رمضانی",
-      "image": "/images/users/a.png"
+      "image": "/images/users/profile_photo6.jpeg"
     },
     {
       "id": "@ali",
       "name": "علی غلامی",
-      "image": "/images/users/a.png"
+      "image": "/images/users/profile_photo5.jpeg"
     },
     {
       "id": "@hasan",
       "name": "حسن رضایی",
-      "image": "/images/users/a.png"
+      "image": "/images/users/profile_photo4.jpeg"
     },
     {
       "id": "@maryam",
       "name": "مریم فاطمی",
-      "image": "/images/users/a.png"
+      "image": "/images/users/profile_photo3.jpeg"
     }
   ]
 }
