@@ -14,9 +14,6 @@ export interface ITweetProps{
 const Tweet = (props: ITweetProps) =>
 {
   
-  console.log(props);
-  
-  
   return (
     <div className='py-2 px-3 my-1 border-b'>
 

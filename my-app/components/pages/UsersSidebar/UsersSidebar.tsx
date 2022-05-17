@@ -6,16 +6,18 @@ import IconHashtag from '../../Ui/Icon/IconHashtag';
 import IconAvatar from './../../Ui/Icon/IconAvatar';
 
 
-type User = {
-  id: string
-  name: string
-  image: string
+
+interface IUser
+{
+  id: string;
+  name: string;
+  image: string;
 }
 
 const UsersSidebar = () =>
 {
 
-  const [ users, setUsers ] = useState<User[]>( [] );
+  const [ users, setUsers ] = useState<IUser[]>( [] );
 
   useEffect( () =>
   {
@@ -28,7 +30,7 @@ const UsersSidebar = () =>
       {
         console.log( err );
       } );
-  } );
+  } ,[] );
 
   return (
     <div className='py-4 px-3'>
@@ -50,12 +52,12 @@ const UsersSidebar = () =>
         <p className='text-lg py-3 border-b border-gray-300 px-3'>بهترین خبرنگاران</p>
         <ul>
           {
-            users.map( item =>
+            users.map( ( item, i ) =>
             {
               return (
-                <li className='py-2 px-2 flex justify-start border-b border-gray-300'>
+                <li key={i} className='py-2 px-2 flex justify-start border-b border-gray-300'>
                   {item.image ? <img src={item.image} className="rounded-full" width={40} /> : <IconAvatar width={40} />}
-                  
+
                   <div className='px-2 text-sm'>
                     <p>{item.name}</p>
                     <p>{item.id}</p>

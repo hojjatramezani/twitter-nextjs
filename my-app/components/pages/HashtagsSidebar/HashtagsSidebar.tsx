@@ -20,7 +20,7 @@ const HashtagsSidebar = () =>
       {
         console.log( err );
       } );
-  } );
+  } , [] );
 
   return (
     <div className='py-4 px-3'>
@@ -29,10 +29,10 @@ const HashtagsSidebar = () =>
 
       <ul>
         {
-          hashtags.map( item =>
+          hashtags.map( (item , i) =>
           {
             return (
-              <li className='flex justify-start py-1 px-2 cursor-pointer hover:bg-slate-50'>
+              <li key={i} className='flex justify-start py-1 px-2 cursor-pointer hover:bg-slate-50'>
                 <IconHashtag width={24} />
                 <span className='pr-3'>{item}</span>
               </li>

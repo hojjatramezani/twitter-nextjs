@@ -12,7 +12,7 @@ const TweetList = ( props: ITweetListProps ) =>
     <div>
 
       {
-        props.tweets.map( item => <Tweet {...item}/> )
+        props.tweets.map( (item , i) => <Tweet key={i} {...item}/> )
       }
 
     </div>
