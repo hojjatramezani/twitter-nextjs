@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { getUsers } from '../../../data/api/api-tweet';
 import IconAddPhoto from '../../Ui/Icon/IconAddPhoto';
 import IconExit from '../../Ui/Icon/IconExit';
 import IconHashtag from '../../Ui/Icon/IconHashtag';
@@ -21,16 +22,15 @@ const UsersSidebar = () =>
 
   useEffect( () =>
   {
-    axios.get( "http://localhost:3000/users" )
-      .then( res =>
-      {
-        setUsers( res.data );
-      } )
-      .catch( err =>
-      {
-        console.log( err );
-      } );
-  } ,[] );
+
+    getUsers( ( isOk: boolean, data: any ) =>
+    {
+      if ( !isOk )
+        return alert( "لیست کاربران دریافت نشد." );
+      setUsers( data );
+    } );
+    
+  }, [] );
 
   return (
     <div className='py-4 px-3'>

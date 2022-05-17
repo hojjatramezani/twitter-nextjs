@@ -3,6 +3,7 @@ import IconHashtag from '../../Ui/Icon/IconHashtag';
 import { useEffect } from 'react';
 import axios from 'axios';
 import { useState } from 'react';
+import { getHashtags } from './../../../data/api/api-tweet';
 
 const HashtagsSidebar = () =>
 {
@@ -11,16 +12,13 @@ const HashtagsSidebar = () =>
 
   useEffect( () =>
   {
-    axios.get( "http://localhost:3000/hashtags" )
-      .then( res =>
-      {
-        setHashtags( res.data );
-      } )
-      .catch( err =>
-      {
-        console.log( err );
-      } );
-  } , [] );
+    getHashtags( ( isOk: boolean, data: any ) =>
+    {
+      if ( !isOk )
+        return alert( "لیست هشتگ ها دریافت نشد." );
+      setHashtags( data );
+    } );
+  }, [] );
 
   return (
     <div className='py-4 px-3'>
@@ -29,7 +27,7 @@ const HashtagsSidebar = () =>
 
       <ul>
         {
-          hashtags.map( (item , i) =>
+          hashtags.map( ( item, i ) =>
           {
             return (
               <li key={i} className='flex justify-start py-1 px-2 cursor-pointer hover:bg-slate-50'>

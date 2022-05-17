@@ -5,14 +5,14 @@ import IconHashtag from '../../Ui/Icon/IconHashtag';
 import IconAvatar from '../../Ui/Icon/IconAvatar';
 import IconPic from '../../Ui/Icon/IconPic';
 import axios from 'axios';
+import { newTweetsRequest } from '../../../data/api/api-tweet';
 
 const SendTweet = () =>
 {
 
   const [ textTweet, setTextTweet ] = useState( '' );
-  console.log( textTweet );
   const newTweet = {
-    id: Math.floor(Math.random() * 1000),
+    id: Math.floor( Math.random() * 1000 ),
     "sender": {
       "id": "@arash1350",
       "name": "آرش علوی",
@@ -23,20 +23,16 @@ const SendTweet = () =>
 
   };
 
-  const sendTweet = () =>
+  const sendTweetBtn = () =>
   {
     if ( !textTweet )
       return alert( "لطفا یک توییت بنویسید" );
-
-    axios.post( "http://localhost:3000/tweets", newTweet )
-      .then( res =>
-      {
-        alert( "توییت با موفقیت انجام شد" );
-      } )
-      .catch( err =>
-      {
-        alert( "توییت ارسال نشد." );
-      } );
+    newTweetsRequest( newTweet, ( isOk: boolean ) =>
+    {
+      if ( !isOk )
+        return alert( "توییت ارسال نشد!!!" );
+      alert( "توییت ارسال شد." );
+    } );
   };
 
 
@@ -56,7 +52,7 @@ const SendTweet = () =>
         <span className='cursor-pointer'>
           <IconPic width={32} />
         </span>
-        <button onClick={sendTweet} className='btn btn-small btn-info-outline mr-2'>Tweet</button>
+        <button onClick={sendTweetBtn} className='btn btn-small btn-info-outline mr-2'>Tweet</button>
       </div>
 
     </div>

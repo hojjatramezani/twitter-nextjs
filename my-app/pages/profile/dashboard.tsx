@@ -10,9 +10,10 @@ import LayoutDashboard from "../../layouts/LayoutDashboard/LayoutDashboard";
 const dashboard = () =>
 {
 
-    const [tweets , setTweets] = useState<ITweetProps[]>([]);
+    const [ tweets, setTweets ] = useState<ITweetProps[]>( [] );
 
-    useEffect(()=> {
+    useEffect( () =>
+    {
         // getTweet("http://localhost:3000/tweets")
         // .then(res => {
 
@@ -24,15 +25,30 @@ const dashboard = () =>
         //         return {id , name , image , text , like}
         //     });
         //     setTweets(products)
-            
+
         // })
         // .catch(err => {
         //     console.log(err);
         // })
+        getTweet( ( isOk: boolean, data: any ) =>
+        {
+            if ( !isOk )
+                return alert( "اطلاعات دریافت نشد" );
+            data = data.map( ( item: any ) =>
+            {
+                const text = item.text;
+                const like = item.like;
+                const { id, name, image } = item.sender;
+                return { id, name, image, text, like };
+            } );
+            setTweets( data );
 
-        
+        } );
 
-    },[])
+
+
+
+    }, [] );
 
     return (
         <LayoutDashboard>
