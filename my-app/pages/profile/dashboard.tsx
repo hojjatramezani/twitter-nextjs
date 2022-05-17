@@ -4,6 +4,7 @@ import SendTweet from "../../components/pages/SendTweet/SendTweet";
 import { ITweetProps } from "../../components/pages/Tweet/Tweet";
 import TweetList from "../../components/pages/TweetList/TweetList";
 import IconHome from "../../components/Ui/Icon/IconHome";
+import { getTweet } from "../../data/api/api-tweet";
 import LayoutDashboard from "../../layouts/LayoutDashboard/LayoutDashboard";
 
 const dashboard = () =>
@@ -12,22 +13,25 @@ const dashboard = () =>
     const [tweets , setTweets] = useState<ITweetProps[]>([]);
 
     useEffect(()=> {
-        axios.get("http://localhost:3000/tweets")
-        .then(res => {
+        // getTweet("http://localhost:3000/tweets")
+        // .then(res => {
 
-            let products = res.data;
-            products = products.map((item:any) => {
-                const text = item.text;
-                const like = item.like;
-                const {id , name , image} = item.sender;
-                return {id , name , image , text , like}
-            });
-            setTweets(products)
+        //     let products = res.data;
+        //     products = products.map((item:any) => {
+        //         const text = item.text;
+        //         const like = item.like;
+        //         const {id , name , image} = item.sender;
+        //         return {id , name , image , text , like}
+        //     });
+        //     setTweets(products)
             
-        })
-        .catch(err => {
-            console.log(err);
-        })
+        // })
+        // .catch(err => {
+        //     console.log(err);
+        // })
+
+        
+
     },[])
 
     return (
