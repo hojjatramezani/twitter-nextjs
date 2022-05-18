@@ -36,8 +36,8 @@ const UsersSidebar = () =>
     <div className='py-4 px-3'>
       <div className='flex justify-end'>
         <div className='px-3'>
-          <p className='ltr'>hojjat ramezani</p>
-          <p className='ltr'>@hojjat70</p>
+          <p className='ltr'>vahid ahmadi</p>
+          <p className='ltr'>@vahid</p>
         </div>
         <IconAvatar width={50} />
       </div>

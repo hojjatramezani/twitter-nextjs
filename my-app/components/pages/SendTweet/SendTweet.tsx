@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
-import IconAddPhoto from '../../Ui/Icon/IconAddPhoto';
-import IconExit from '../../Ui/Icon/IconExit';
-import IconHashtag from '../../Ui/Icon/IconHashtag';
 import IconAvatar from '../../Ui/Icon/IconAvatar';
 import IconPic from '../../Ui/Icon/IconPic';
-import axios from 'axios';
 import { newTweetsRequest } from '../../../data/api/api-tweet';
+import {useRouter} from 'next/router'
+
+
 
 const SendTweet = () =>
 {
 
+  const router = useRouter()
   const [ textTweet, setTextTweet ] = useState( '' );
   const newTweet = {
     id: Math.floor( Math.random() * 1000 ),
     "sender": {
-      "id": "@arash1350",
-      "name": "آرش علوی",
-      "image": "/images/users/profile_photo1.jpeg"
+      "id": "@vahid",
+      "name": "وحید احمدی",
+      "image": "/images/users/03.png"
     },
     "text": textTweet,
     "like": 78
@@ -32,6 +32,8 @@ const SendTweet = () =>
       if ( !isOk )
         return alert( "توییت ارسال نشد!!!" );
       alert( "توییت ارسال شد." );
+      router.reload();
+      
     } );
   };
 
