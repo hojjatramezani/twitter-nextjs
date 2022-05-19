@@ -6,15 +6,6 @@ import Link from 'next/link';
 const Home: NextPage = () =>
 {
   return (
-    // <div className='p-5'>
-    //   <h1 className="text-3xl font-bold underline">
-    //     Hello world!
-    //   </h1>
-    //   <div>
-    //     <Link href={'profile/dashboard'}><a className='inline-block'><span className='btn btn-small btn-info-outline my-3 inline-block text-sm leading-3  pt-3' >Dashboard</span></a></Link>
-    //   </div>
-    // </div>
-
     <div className="flex flex-row w-full h-screen">
       <div className="flex flex-col justify-center w-full   h-full bg-slate-100 lg:w-1/2">
         <div className='flex justify-center py-8'>
