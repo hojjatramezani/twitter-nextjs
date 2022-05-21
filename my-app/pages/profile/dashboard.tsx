@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useEffect, useState } from "react";
 import SendTweet from "../../components/pages/SendTweet/SendTweet";
 import { ITweetProps } from "../../components/pages/Tweet/Tweet";
@@ -30,18 +31,24 @@ const dashboard = () =>
     }, [] );
 
     return (
-        <LayoutDashboard>
+        <>
+            <Head>
+                <title>Dashboard</title>
+                <meta name="viewport"  />
+            </Head>
+                <LayoutDashboard>
 
-            <div className="px-3 py-3 flex justify-start items-center border-b">
-                <IconHome width={26} />
-                <p className="px-2">خانه</p>
-            </div>
+                    <div className="px-3 py-3 flex justify-start items-center border-b">
+                        <IconHome width={26} />
+                        <p className="px-2">خانه</p>
+                    </div>
 
-            <SendTweet />
+                    <SendTweet />
 
-            <TweetList tweets={tweets} />
+                    <TweetList tweets={tweets} />
 
-        </LayoutDashboard>
+                </LayoutDashboard>
+        </>
     );
 };
 
