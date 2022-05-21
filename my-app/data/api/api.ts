@@ -8,3 +8,12 @@ export const GetAxiosInstans: any = () => {
         }
     })
 }
+
+export const GetAxiosAuth: any = () => {
+    return axios.create({
+        baseURL: "https://twitterapi.liara.run/api",
+        headers: {
+            // API_KEY: "weeeeeeeeeeeeeeeeeeeeeeweeeeeewweweewe"
+        }
+    })
+}
