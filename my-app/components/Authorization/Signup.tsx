@@ -1,3 +1,4 @@
+import Router from 'next/router';
 import React, { useState } from 'react';
 import { signupApi } from '../../data/api/api-auth';
 
@@ -61,6 +62,7 @@ const Signup = () =>
 
         alert( "شما وارد حساب کاربری خود شدید." );
         setLoading( false );
+        Router.push("/profile/dashboard")
       }
 
     } );

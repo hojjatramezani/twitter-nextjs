@@ -5,6 +5,8 @@ import IconAddPhoto from '../../Ui/Icon/IconAddPhoto';
 import IconExit from '../../Ui/Icon/IconExit';
 import IconHashtag from '../../Ui/Icon/IconHashtag';
 import IconAvatar from './../../Ui/Icon/IconAvatar';
+import Router from 'next/router';
+import { COOKIE_NAME_PRERENDER_DATA } from 'next/dist/server/api-utils';
 
 
 
@@ -32,6 +34,15 @@ const UsersSidebar = () =>
     
   }, [] );
 
+  const exitHandeler = () => {
+    localStorage.removeItem("nameTwitter");
+    localStorage.removeItem("usernameTwitter");
+    localStorage.removeItem("x-auth-token");
+    sessionStorage.setItem("hellooooooo" , "10")
+
+    Router.push("/authorization")
+  }
+
   return (
     <div className='py-4 px-3'>
       <div className='flex justify-end'>
@@ -42,7 +53,7 @@ const UsersSidebar = () =>
         <IconAvatar width={50} />
       </div>
       <div className='flex justify-end pt-3 pb-7'>
-        <IconExit width={32} />
+        <IconExit onClick={exitHandeler} className="cursor-pointer" width={32} />
         <span className='mr-2'>
           <IconAddPhoto width={32} />
         </span>
