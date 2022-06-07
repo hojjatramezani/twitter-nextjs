@@ -18,6 +18,17 @@ export const loginApi = (data:any ,callback: any) => {
         callback(true , res.data)
     })
     .catch((err: any) => {
-        callback(false , err.response.data.message)
+        callback(false , err?.response?.data?.message)
     })
 }
+
+export const signupApi = (data:any ,callback: any) => {
+    GetAxiosAuth().post("/register" , data)
+    .then((res: any) => {
+        callback(true , res.data)
+    })
+    .catch((err: any) => {
+        callback(false , err?.response?.data?.message)
+    })
+}
+

@@ -6,7 +6,7 @@ const Login = () =>
 
   const [ username, setUserName ] = useState( '' );
   const [ password, setPassword ] = useState( '' );
-  const [ loading, setLoading ] = useState( false );
+  const [ loading, setLoading ] = useState<boolean>( false );
 
 
   const data = {
@@ -38,6 +38,10 @@ const Login = () =>
         return setLoading( false );
       } else
       {
+        localStorage.setItem('nameTwitter', res.name);
+        localStorage.setItem('usernameTwitter', res.username);
+        localStorage.setItem('x-auth-token', res['x-auth-token']);
+        
         alert( "شما وارد حساب کاربری خود شدید." );
         setLoading( false );
       }
