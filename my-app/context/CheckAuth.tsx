@@ -13,7 +13,7 @@ const CheckAuth = ( props: any ) =>
             Router.push( "/authorization" );
         console.log( "11111111" );
 
-    }, [] );
+    }, [ls] );
     return (
         <div>
             {props.children}
