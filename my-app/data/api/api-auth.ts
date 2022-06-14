@@ -1,4 +1,4 @@
-import  {GetAxiosAuth}  from './api';
+import  {GetAxiosApi, GetAxiosAuth}  from './api';
 
 // export const getTweet = (callback: any) => {
 //     GetAxiosInstans().get("/tweets")
@@ -31,4 +31,15 @@ export const signupApi = (data:any ,callback: any) => {
         callback(false , err?.response?.data?.message)
     })
 }
+
+export const uploadUserPhoto = (data:any ,callback: any) => {
+    GetAxiosApi().post("/uploadUserPhoto" , data)
+    .then((res: any) => {
+        callback(true , res.data)
+    })
+    .catch((err: any) => {
+        callback(false , err?.response?.data?.message)
+    })
+}
+
 

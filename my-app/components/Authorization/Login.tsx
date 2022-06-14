@@ -41,6 +41,7 @@ const Login = () =>
       {
         localStorage.setItem('nameTwitter', res.name);
         localStorage.setItem('usernameTwitter', res.username);
+        localStorage.setItem('imageTwitter', res.image);
         localStorage.setItem('x-auth-token', res['x-auth-token']);
         
         alert( "شما وارد حساب کاربری خود شدید." );

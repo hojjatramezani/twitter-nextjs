@@ -17,3 +17,12 @@ export const GetAxiosAuth: any = () => {
         }
     })
 }
+
+export const GetAxiosApi: any = () => {
+    return axios.create({
+        baseURL: "https://twitterapi.liara.run/api",
+        headers: {
+            'x-auth-token' : localStorage.getItem('x-auth-token') || "logOut"
+        }
+    })
+}

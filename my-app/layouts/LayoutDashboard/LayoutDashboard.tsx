@@ -2,8 +2,10 @@ import React from 'react';
 import HashtagsSidebar from '../../components/pages/HashtagsSidebar/HashtagsSidebar';
 import UsersSidebar from '../../components/pages/UsersSidebar/UsersSidebar';
 
+
 const LayoutDashboard = ( props: any ) =>
 {
+    
     return (
         <div className="flex flex-row w-full h-screen">
             <div className=" w-72 basis-72 border-l border-sky-300 h-full overflow-y-scroll">

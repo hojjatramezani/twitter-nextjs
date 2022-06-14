@@ -13,7 +13,7 @@ const Home: NextPage = () =>
         </div>
         <div>
           <div className='py-5 flex justify-center'>
-            <Link href={'profile/dashboard'}><a className='inline-block'><span className='btn btn-info my-3 inline-block text-sm leading-3  pt-4' >مشاهده پنل کاربری</span></a></Link>
+            <Link href={'profile/dashboard'}><a href='' className='inline-block'><span className='btn btn-info my-3 inline-block text-sm leading-3  pt-4' >مشاهده پنل کاربری</span></a></Link>
           </div>
           <div className='text-lg py-2 px-4  text-center '>
             React - nextjs - tailwindcss - local json-server
