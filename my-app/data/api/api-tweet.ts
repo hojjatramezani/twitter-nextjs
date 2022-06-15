@@ -1,7 +1,7 @@
-import  {GetAxiosInstans}  from './api';
+import  {GetAxiosApi, GetAxiosInstans}  from './api';
 
 export const getTweet = (callback: any) => {
-    GetAxiosInstans().get("/tweets")
+    GetAxiosApi().post("/getAllTweet")
     .then((res: any) => {
         const data = res.data;
         callback(true , data)
@@ -34,11 +34,12 @@ export const getHashtags = (callback: any) => {
 }
 
 export const newTweetsRequest = (data:any ,callback: any) => {
-    GetAxiosInstans().post("/tweets" , data)
+    GetAxiosApi().post("/newTweet" , data)
     .then((res: any) => {
-        callback(true)
+        const data = res.data;
+        callback(true , data)
     })
     .catch((err: any) => {
-        callback(false)
+        callback(false , err)
     })
 }

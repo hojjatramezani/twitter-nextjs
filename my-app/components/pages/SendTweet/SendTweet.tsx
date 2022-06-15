@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import IconAvatar from '../../Ui/Icon/IconAvatar';
 import IconPic from '../../Ui/Icon/IconPic';
 import { newTweetsRequest } from '../../../data/api/api-tweet';
@@ -11,31 +11,34 @@ const SendTweet = () =>
 
   const router = useRouter()
   const [ textTweet, setTextTweet ] = useState( '' );
-  const newTweet = {
-    id: Math.floor( Math.random() * 1000 ),
-    "sender": {
-      "id": "@vahid",
-      "name": "وحید احمدی",
-      "image": "/images/users/03.png"
-    },
-    "text": textTweet,
-    "like": 78
-
-  };
+  const [imageTwitter , setImageTwitter] =useState<any>('')
+  const newTweet = {"text": textTweet};
 
   const sendTweetBtn = () =>
   {
     if ( !textTweet )
       return alert( "لطفا یک توییت بنویسید" );
-    newTweetsRequest( newTweet, ( isOk: boolean ) =>
+    newTweetsRequest( newTweet, ( isOk: boolean , data: any ) =>
     {
       if ( !isOk )
-        return alert( "توییت ارسال نشد!!!" );
+        return alert( "توییت ارسال نشد!!!" + data );
       alert( "توییت ارسال شد." );
       router.reload();
       
     } );
   };
+
+  useEffect( () =>
+  {
+    setImageTwitter(localStorage.getItem("imageTwitter"))
+  }, [] );
+
+  const showAvatarHandeler = () => {
+    if(imageTwitter && imageTwitter !== "undefined")
+      return <img  src={imageTwitter} className='block rounded-full object-cover h-12 w-12' />
+    if(!imageTwitter || imageTwitter == "undefined" )
+      return <IconAvatar width={50} />
+}
 
 
   return (
@@ -43,7 +46,7 @@ const SendTweet = () =>
 
       <div className='flex'>
         <div className="w-auto py-2">
-          <IconAvatar width={32} />
+            {showAvatarHandeler()}
         </div>
         <div className="grow px-3 py-2">
           <textarea className='w-full outline-none' value={textTweet} onChange={e => setTextTweet( e.target.value )} placeholder='توییت خود را بنویسید ... ' ></textarea>

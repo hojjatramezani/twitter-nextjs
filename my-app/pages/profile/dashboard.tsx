@@ -17,15 +17,17 @@ const dashboard = () =>
         getTweet( ( isOk: boolean, data: any ) =>
         {
             if ( !isOk )
-                return alert( "اطلاعات دریافت نشد" );
+                return alert( "اطلاعات دریافت نشد" + data );
             data = data.map( ( item: any ) =>
             {
                 const text = item.text;
-                const like = item.like;
-                const { id, name, image } = item.sender;
-                return { id, name, image, text, like };
+                const likes = item.likes;
+                const { _id, name, username , image } = item.user;
+                return { _id, name, image, text, likes , username };
             } );
             setTweets( data );
+            console.log(data);
+            
 
         } );
     }, [] );
