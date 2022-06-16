@@ -8,6 +8,7 @@ export interface ITweetProps{
   name: string
   username: string
   image: string
+  imageTweet: string
   text: string
   likes: string
 }
@@ -31,6 +32,10 @@ const Tweet = (props: ITweetProps) =>
         </div>
       </div>
 
+      {
+        props.imageTweet &&
+        <img src={ props.imageTweet} className="block w-72 overflow-hidden mx-auto rounded-lg border mb-4" />
+      }
       <p className='flex py-3 pr-10 pl-2 mb-3 text-xs leading-7 break-words w-full'>{props.text}</p>
 
       <div className='flex justify-end py-1'>

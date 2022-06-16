@@ -15,7 +15,7 @@ import { uploadUserPhoto } from '../../../data/api/api-auth';
 
 interface IUser
 {
-  id: string;
+  username: string;
   name: string;
   image: string;
 }
@@ -121,11 +121,11 @@ const UsersSidebar = (props: any) =>
             {
               return (
                 <li key={i} className='py-2 px-2 flex justify-start border-b border-gray-300'>
-                  {item.image ? <img src={item.image} className="rounded-full" width={40} /> : <IconAvatar width={40} />}
+                  {item.image ? <img src={item.image} className='block rounded-full object-cover h-10 w-10 border border-black' /> : <IconAvatar width={40} />}
 
                   <div className='px-2 text-sm'>
                     <p>{item.name}</p>
-                    <p>{item.id}</p>
+                    <p>{item.username}</p>
                   </div>
                 </li>
               );

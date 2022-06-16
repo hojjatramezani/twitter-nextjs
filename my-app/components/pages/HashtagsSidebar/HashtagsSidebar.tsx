@@ -8,7 +8,7 @@ import { getHashtags } from './../../../data/api/api-tweet';
 const HashtagsSidebar = () =>
 {
 
-  const [ hashtags, setHashtags ] = useState( [] );
+  const [ hashtags, setHashtags ] = useState<any>( [] );
 
   useEffect( () =>
   {
@@ -27,12 +27,12 @@ const HashtagsSidebar = () =>
 
       <ul>
         {
-          hashtags.map( ( item, i ) =>
+          hashtags.map( ( item:any, i:number ) =>
           {
             return (
               <li key={i} className='flex justify-start py-1 px-2 cursor-pointer hover:bg-slate-50'>
                 <IconHashtag width={24} />
-                <span className='pr-3'>{item}</span>
+                <span className='pr-3'>{item.text}</span>
               </li>
             );
           } )

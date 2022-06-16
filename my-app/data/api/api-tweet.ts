@@ -12,7 +12,7 @@ export const getTweet = (callback: any) => {
 }
 
 export const getUsers = (callback: any) => {
-    GetAxiosInstans().get("/users")
+    GetAxiosApi().get("/getAllUser")
     .then((res: any) => {
         const data = res.data;
         callback(true , data)
@@ -23,7 +23,7 @@ export const getUsers = (callback: any) => {
 }
 
 export const getHashtags = (callback: any) => {
-    GetAxiosInstans().get("/hashtags")
+    GetAxiosApi().get("/getAllHashTags")
     .then((res: any) => {
         const data = res.data;
         callback(true , data)
