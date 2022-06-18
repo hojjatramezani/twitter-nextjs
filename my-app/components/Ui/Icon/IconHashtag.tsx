@@ -20,4 +20,4 @@ const IconHashtag = (props: IIcon) =>
     );
 };
 
-export default IconHashtag;
+export default React.memo(IconHashtag);

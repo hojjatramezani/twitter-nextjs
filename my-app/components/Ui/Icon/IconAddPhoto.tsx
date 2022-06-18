@@ -15,4 +15,4 @@ const IconAddPhoto = (props: IIcon) =>
     );
 };
 
-export default IconAddPhoto;
+export default React.memo(IconAddPhoto);

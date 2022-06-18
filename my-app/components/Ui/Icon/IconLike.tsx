@@ -14,4 +14,4 @@ const IconLike = (props: IIcon) =>
     );
 };
 
-export default IconLike;
+export default React.memo(IconLike);

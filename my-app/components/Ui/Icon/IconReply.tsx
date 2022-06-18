@@ -15,4 +15,4 @@ const IconReply = (props: IIcon) =>
     );
 };
 
-export default IconReply;
+export default React.memo(IconReply);

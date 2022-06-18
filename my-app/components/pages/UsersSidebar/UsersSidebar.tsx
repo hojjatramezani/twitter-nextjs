@@ -138,4 +138,4 @@ const UsersSidebar = (props: any) =>
   );
 };
 
-export default UsersSidebar;
+export default React.memo(UsersSidebar);

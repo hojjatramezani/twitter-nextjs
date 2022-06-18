@@ -15,7 +15,6 @@ export interface ITweetProps{
 
 const Tweet = (props: ITweetProps) =>
 {
-  console.log(props.image , props.name);
   
   return (
     <div className='py-2 px-3 my-1 border-b'>
@@ -48,4 +47,4 @@ const Tweet = (props: ITweetProps) =>
   );
 };
 
-export default Tweet;
+export default React.memo(Tweet);

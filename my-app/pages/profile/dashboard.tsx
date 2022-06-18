@@ -1,16 +1,20 @@
 import Head from 'next/head';
+import React from 'react';
 import { useEffect, useState } from "react";
 import SendTweet from "../../components/pages/SendTweet/SendTweet";
 import { ITweetProps } from "../../components/pages/Tweet/Tweet";
-import TweetList from "../../components/pages/TweetList/TweetList";
 import IconHome from "../../components/Ui/Icon/IconHome";
+import { setTweetList, useTweetDispatch, useTweetState } from '../../context/TweetContext';
 import { getTweet } from "../../data/api/api-tweet";
 import LayoutDashboard from "../../layouts/LayoutDashboard/LayoutDashboard";
+import TweetList from './../../components/pages/TweetList/TweetList';
 
 const dashboard = () =>
 {
 
-    const [ tweets, setTweets ] = useState<ITweetProps[]>( [] );
+    // const [ tweets, setTweets ] = useState<ITweetProps[]>( [] );
+    const {tweetList, reLoadTweet} = useTweetState();
+    const tweetDispatch = useTweetDispatch();
 
     useEffect( () =>
     {
@@ -18,7 +22,7 @@ const dashboard = () =>
         {
             if ( !isOk )
                 return alert( "اطلاعات دریافت نشد" + data );
-            data = data.map( ( item: any ) =>
+            let newData = data.map( ( item: any ) =>
             {
                 const text = item.text;
                 const likes = item.likes;
@@ -26,12 +30,13 @@ const dashboard = () =>
                 const { _id, name, username , image } = item.user;
                 return { _id, name, image, text, likes , username , imageTweet };
             } );
-            setTweets( data );
-            console.log(data);
+            
+            setTweetList(tweetDispatch , newData);
+            console.log(tweetList);
             
 
         } );
-    }, [] );
+    }, [reLoadTweet] );
 
     return (
         <>
@@ -48,14 +53,14 @@ const dashboard = () =>
 
                     <SendTweet />
 
-                    <TweetList tweets={tweets} />
+                    <TweetList tweets={tweetList} />
 
                 </LayoutDashboard>
         </>
     );
 };
 
-export default dashboard;
+export default React.memo(dashboard);
 
 
 

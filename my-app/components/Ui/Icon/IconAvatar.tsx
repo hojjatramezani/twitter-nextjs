@@ -14,4 +14,4 @@ const IconAvatar = (props: IIcon) =>
     );
 };
 
-export default IconAvatar;
+export default React.memo(IconAvatar);

@@ -14,4 +14,4 @@ const IconHome = (props: IIcon) =>
     );
 };
 
-export default IconHome;
+export default React.memo(IconHome);

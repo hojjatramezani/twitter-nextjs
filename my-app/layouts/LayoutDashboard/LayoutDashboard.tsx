@@ -21,4 +21,4 @@ const LayoutDashboard = ( props: any ) =>
     );
 };
 
-export default LayoutDashboard;
+export default React.memo(LayoutDashboard);

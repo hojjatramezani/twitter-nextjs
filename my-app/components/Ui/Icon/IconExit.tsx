@@ -15,4 +15,4 @@ const IconExit = (props: IIcon) =>
     );
 };
 
-export default IconExit;
+export default React.memo(IconExit);

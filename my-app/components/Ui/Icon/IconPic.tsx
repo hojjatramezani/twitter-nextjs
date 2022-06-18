@@ -14,4 +14,4 @@ const IconPic = (props: IIcon) =>
     );
 };
 
-export default IconPic;
+export default React.memo(IconPic);

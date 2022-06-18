@@ -2,9 +2,12 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import React from 'react';
 
 const Home: NextPage = () =>
 {
+
+
   return (
     <div className="flex flex-row w-full h-screen">
       <div className="flex flex-col justify-center w-full   h-full bg-slate-100 lg:w-1/2">
@@ -33,4 +36,6 @@ const Home: NextPage = () =>
   );
 };
 
-export default Home;
+export default React.memo(Home);
+
+

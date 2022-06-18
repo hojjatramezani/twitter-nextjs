@@ -42,4 +42,4 @@ const HashtagsSidebar = () =>
   );
 };
 
-export default HashtagsSidebar;
+export default React.memo(HashtagsSidebar);

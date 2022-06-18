@@ -19,4 +19,4 @@ const TweetList = ( props: ITweetListProps ) =>
   );
 };
 
-export default TweetList;
+export default React.memo(TweetList);

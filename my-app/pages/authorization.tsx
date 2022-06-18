@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import Login from "../components/Authorization/Login";
 import Signup from "../components/Authorization/Signup";
@@ -29,7 +30,7 @@ const authorization = () =>
     );
 };
 
-export default authorization;
+export default React.memo(authorization);
 
 
 

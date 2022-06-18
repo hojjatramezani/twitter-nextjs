@@ -3,15 +3,18 @@ import IconAvatar from '../../Ui/Icon/IconAvatar';
 import IconPic from '../../Ui/Icon/IconPic';
 import { newTweetsRequest } from '../../../data/api/api-tweet';
 import { useRouter } from 'next/router';
+import { setReLoadTweet, setTweetList, setTweetText, useTweetDispatch, useTweetState } from '../../../context/TweetContext';
 
 
 
 const SendTweet = () =>
 {
 
+  const {textTweet , reLoadTweet} = useTweetState()
+  const tweetDispatch = useTweetDispatch()
 
   const inputFile = useRef<any>();
-  const [ textTweet, setTextTweet ] = useState( '' );
+  // const [ textTweet, setTextTweet ] = useState( '' );
   const [ imageTwitter, setImageTwitter ] = useState<any>( '' );
 
   const router = useRouter();
@@ -35,7 +38,8 @@ const SendTweet = () =>
       if ( !isOk )
         return alert( "توییت ارسال نشد!!!" + data );
       alert( "توییت ارسال شد." );
-      router.reload();
+      setTweetText(tweetDispatch , "")
+      setReLoadTweet(tweetDispatch , reLoadTweet == false ? true : false)
 
     } );
   };
@@ -79,7 +83,7 @@ const SendTweet = () =>
           {showAvatarHandeler()}
         </div>
         <div className="grow px-3 py-2">
-          <textarea className='w-full outline-none' value={textTweet} onChange={e => setTextTweet( e.target.value )} placeholder='توییت خود را بنویسید ... ' ></textarea>
+          <textarea className='w-full outline-none' value={textTweet} onChange={e => setTweetText(tweetDispatch , e.target.value )} placeholder='توییت خود را بنویسید ... ' ></textarea>
         </div>
       </div>
       {
@@ -98,4 +102,7 @@ const SendTweet = () =>
   );
 };
 
-export default SendTweet;
+export default React.memo(SendTweet);
+
+
+
