@@ -11,7 +11,7 @@ const LayoutDashboard = ( props: any ) =>
             <div className=" w-72 basis-72 border-l border-sky-300 h-full overflow-y-scroll">
                 <HashtagsSidebar />
             </div>
-            <div className='flex-1 h-full overflow-y-scroll w-full'>
+            <div id='containerDiv' className=' flex-1 h-full overflow-y-scroll w-full'>
                 {props.children}
             </div>
             <div className=" w-80 basis-80 border-r border-sky-300  h-full overflow-y-scroll">

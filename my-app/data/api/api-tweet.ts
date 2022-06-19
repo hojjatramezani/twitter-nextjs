@@ -43,3 +43,14 @@ export const newTweetsRequest = (data:any ,callback: any) => {
         callback(false , err)
     })
 }
+
+export const likeTweet = (id:any ,callback: any) => {
+    GetAxiosApi().get(`/likeTweet/${id}`)
+    .then((res: any) => {
+        const data = res.data;
+        callback(true , data)
+    })
+    .catch((err: any) => {
+        callback(false , err)
+    })
+}

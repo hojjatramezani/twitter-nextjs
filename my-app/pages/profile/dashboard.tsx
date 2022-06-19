@@ -27,7 +27,8 @@ const dashboard = () =>
                 const text = item.text;
                 const likes = item.likes;
                 const imageTweet = item.image;
-                const { _id, name, username , image } = item.user;
+                const _id = item._id;
+                const { name, username , image } = item.user;
                 return { _id, name, image, text, likes , username , imageTweet };
             } );
             

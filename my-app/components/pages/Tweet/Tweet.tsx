@@ -1,6 +1,8 @@
 import React from 'react';
+import { setLikeTweet, setReLoadTweet, setTweetText, useTweetDispatch, useTweetState } from '../../../context/TweetContext';
+import { likeTweet } from '../../../data/api/api-tweet';
 import IconAvatar from '../../Ui/Icon/IconAvatar';
-import IconReply from './../../Ui/Icon/IconReply';
+import IconReplay from '../../Ui/Icon/IconReplay';
 import IconLike from './../../Ui/Icon/IconLike';
 
 export interface ITweetProps{
@@ -15,7 +17,28 @@ export interface ITweetProps{
 
 const Tweet = (props: ITweetProps) =>
 {
-  
+
+  const {reLoadTweet , tweetList} = useTweetState();
+  const tweetDispatch = useTweetDispatch();
+
+  const rePlayHandler = () => {
+    setTweetText(tweetDispatch , props.text);
+
+    var myDiv = document.getElementById('containerDiv');
+    myDiv!.scrollTop = 0;
+    myDiv!.style.scrollBehavior = "smooth";
+
+  }
+
+  const likeTweetHandler = () => {
+    likeTweet(props._id , ( isOk: boolean, data: any ) => {
+      if ( !isOk )
+        return alert( "توییت ارسال نشد!!!" + data );          
+      alert( "توییت لایک شد." );
+      setLikeTweet(tweetDispatch , props._id)
+    })
+  }
+
   return (
     <div className='py-2 px-3 my-1 border-b'>
 
@@ -39,8 +62,8 @@ const Tweet = (props: ITweetProps) =>
 
       <div className='flex justify-end py-1'>
         <div>{props.likes}</div>
-        <IconLike width={24} className={"mr-2 cursor-pointer"}  />
-        <IconReply width={24} className={"mr-2 cursor-pointer"}  />
+        <IconLike onClick={likeTweetHandler} width={24} className={"mr-2 cursor-pointer"}  />
+        <IconReplay onClick={rePlayHandler} width={24} className={"mr-2 cursor-pointer"}  />
       </div>
       
     </div>
