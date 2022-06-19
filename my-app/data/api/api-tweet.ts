@@ -11,6 +11,28 @@ export const getTweet = (callback: any) => {
     })
 }
 
+export const getTweetByHashtag = (hashTag:string , callback: any) => {
+    GetAxiosApi().post("/getAllTweet" , {hashTag})
+    .then((res: any) => {
+        const data = res.data;
+        callback(true , data)
+    })
+    .catch((err: any) => {
+        callback(false , err)
+    })
+}
+
+export const getTweetByUser = (user:string , callback: any) => {
+    GetAxiosApi().post("/getAllTweet" , {user})
+    .then((res: any) => {
+        const data = res.data;
+        callback(true , data)
+    })
+    .catch((err: any) => {
+        callback(false , err)
+    })
+}
+
 export const getUsers = (callback: any) => {
     GetAxiosApi().get("/getAllUser")
     .then((res: any) => {

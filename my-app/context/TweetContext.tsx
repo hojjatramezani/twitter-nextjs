@@ -14,9 +14,11 @@ const TweetReducer = ( state: any, action: any ) =>
             return { ...state, textTweet: action.payload };
         case "SET_TWEET_LIST":
             return { ...state, tweetList: action.payload };
+        case "SET_RELOAD_TWEET":
+            return { ...state, reLoadTweet: action.payload };
         case "SET_LIKE_TWEET":
             const foundIndex = state.tweetList.findIndex((item:any) => item._id == action.payload)
-            return { ...state, tweetList: [...state.tweetList.slice(0 , foundIndex)  , {...state.tweetList[foundIndex] , likes: state.tweetList[foundIndex].likes + 1  } ,   ...state.tweetList.slice(foundIndex + 1)  ]}
+            return { ...state, tweetList: [...state.tweetList.slice(0 , foundIndex)  , {...state.tweetList[foundIndex] , likes: state.tweetList[foundIndex].likes + 1  } ,   ...state.tweetList.slice(foundIndex + 1)  ]};
         default:
             throw new Error( 'Unhandled action type:' );
     }

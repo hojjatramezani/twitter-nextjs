@@ -10,6 +10,9 @@ const TweetList = ( props: ITweetListProps ) =>
 {
   return (
     <div>
+      {
+        props.tweets.length == 0 && <div>qwqwqwqwqw</div>
+      }
 
       {
         props.tweets.map( (item , i) => <Tweet key={i} {...item}/> )
