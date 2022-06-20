@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import SendTweet from "../../../components/pages/SendTweet/SendTweet";
 import { ITweetProps } from "../../../components/pages/Tweet/Tweet";
 import IconHome from "../../../components/Ui/Icon/IconHome";
-import { setTweetList, useTweetDispatch, useTweetState } from '../../../context/TweetContext';
+import { setReLoadTweet, setTweetList, useTweetDispatch, useTweetState } from '../../../context/TweetContext';
 import { getTweet, getTweetByHashtag } from "../../../data/api/api-tweet";
 import LayoutDashboard from "../../../layouts/LayoutDashboard/LayoutDashboard";
 import TweetList from '../../../components/pages/TweetList/TweetList';
@@ -58,6 +58,7 @@ const dashboard = () =>
             } );
             
             setTweetList(tweetDispatch , newData);
+            
         } );
     }
 
@@ -97,7 +98,9 @@ const dashboard = () =>
             getTweetDefault()
         
         
-    }, [reLoadTweet , query] );
+    }, [query , reLoadTweet] );
+
+   
 
     return (
         <>
