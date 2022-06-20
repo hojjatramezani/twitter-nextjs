@@ -10,6 +10,7 @@ import LayoutDashboard from "../../../layouts/LayoutDashboard/LayoutDashboard";
 import TweetList from '../../../components/pages/TweetList/TweetList';
 import { useRouter } from 'next/router';
 import { getTweetByUser } from './../../../data/api/api-tweet';
+import LoadingElement from '../../../components/Loading/LoadingElement';
 
 
 const dashboard = () =>
@@ -101,6 +102,7 @@ const dashboard = () =>
     }, [query , reLoadTweet] );
 
    
+    return <LoadingElement msg='لطفا منتظر بمانید.' />
 
     return (
         <>

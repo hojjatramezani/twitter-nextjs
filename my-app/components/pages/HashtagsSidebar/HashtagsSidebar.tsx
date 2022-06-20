@@ -5,10 +5,12 @@ import axios from 'axios';
 import { useState } from 'react';
 import { getHashtags } from './../../../data/api/api-tweet';
 import Link from 'next/link';
+import { useTweetState } from '../../../context/TweetContext';
 
 const HashtagsSidebar = () =>
 {
 
+  const {reLoadTweet} = useTweetState()
   const [ hashtags, setHashtags ] = useState<any>( [] );
 
   useEffect( () =>
@@ -19,7 +21,9 @@ const HashtagsSidebar = () =>
         return alert( "لیست هشتگ ها دریافت نشد." );
       setHashtags( data );
     } );
-  }, [] );
+    console.log('reLoadHashTag ...');
+    
+  }, [reLoadTweet] );
 
   return (
     <div className='py-4 px-3'>
